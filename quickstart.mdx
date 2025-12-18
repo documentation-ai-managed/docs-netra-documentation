@@ -1,0 +1,117 @@
+---
+title: Quickstart Guide
+description: Step-by-step instructions to set up your first documentation space in Netra.
+---
+
+## Overview
+
+Get started with Netra in minutes. Follow these steps to create your first documentation space, add pages, navigate the interface, and invite team members. Netra provides an intuitive editor for MDX documentation with real-time collaboration.
+
+<Callout kind="tip">
+  You need a Netra account to begin. Sign up at `https://app.netra-docs.com` if you haven't already.
+</Callout>
+
+## Create a New Documentation Space
+
+Set up your project hub quickly.
+
+<Steps>
+  <Step title="Log In" icon="log-in">
+    Access your Netra dashboard and select **New Space**.
+  </Step>
+  <Step title="Name Your Space" icon="edit-3">
+    Enter a name like "My Project Docs" and choose a slug such as `my-project`.
+  </Step>
+  <Step title="Configure Settings" icon="settings">
+    Set visibility to **Public** or **Private**, then click **Create**.
+  </Step>
+</Steps>
+
+## Add Your First Page
+
+Build content with Netra's MDX editor.
+
+<Steps>
+  <Step title="Navigate to Pages" icon="file-text">
+    In your new space, click **+ New Page** from the sidebar.
+  </Step>
+  <Step title="Edit Content" icon="edit">
+    Use the visual editor or switch to Markdown mode. Add frontmatter and headings.
+  </Step>
+  <Step title="Preview and Publish" icon="eye">
+    Preview changes, then **Publish** to make it live.
+  </Step>
+</Steps>
+
+Here is an example of a basic page frontmatter and content:
+
+<CodeGroup tabs="MDX">
+  ```mdx
+  ---
+  title: Welcome
+  description: Your first page.
+  ---
+  
+  ## Hello World
+  
+  Start writing your docs here.
+  ```
+</CodeGroup>
+
+## Basic Navigation and Editing
+
+Master the interface efficiently.
+
+<Tabs>
+  <Tab title="Sidebar Navigation" icon="menu">
+    Use the left sidebar to browse pages, spaces, and settings. Drag to reorder pages.
+  </Tab>
+  <Tab title="Editing Tools" icon="edit-3">
+    Access components like `<Callout>`, `<Steps>`, and code blocks from the toolbar. Toggle between visual and source modes.
+  </Tab>
+  <Tab title="Search" icon="search">
+    Press `<kbd>Ctrl</kbd>+<kbd>K</kbd>` (or `<kbd>Cmd</kbd>+<kbd>K</kbd>` on macOS) to search pages instantly.
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  All edits save automatically. Use **Version History** to revert changes.
+</Callout>
+
+## Invite Collaborators
+
+Share your space with your team.
+
+<Steps>
+  <Step title="Open Settings" icon="settings">
+    Go to **Space Settings > Members**.
+  </Step>
+  <Step title="Add Users" icon="user-plus">
+    Enter email addresses and assign roles: **Admin**, **Editor**, or **Viewer**.
+  </Step>
+  <Step title="Send Invites" icon="send">
+    Collaborators receive an email. They can join via the link.
+  </Step>
+</Steps>
+
+## Next Steps
+
+Explore more features to enhance your docs.
+
+<Columns cols={3}>
+  <Card title="Advanced Components" icon="code" href="/docs/components">
+    Learn `<Tabs>`, `<CodeGroup>`, and diagrams.
+  </Card>
+  <Card title="Custom Domains" icon="globe" href="/docs/domains">
+    Connect your domain for branded docs.
+  </Card>
+  <Card title="API Integration" icon="zap" href="/docs/api">
+    Embed dynamic content with webhooks.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  - **Page not publishing?** Check for syntax errors in MDX, like unescaped `{` or `}`.
+  - **Invites failing?** Verify email domains aren't blocked.
+  - **Slow loading?** Optimize images with `width` and `height` attributes.
+</Expandable>

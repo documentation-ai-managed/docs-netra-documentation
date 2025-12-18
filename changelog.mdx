@@ -1,0 +1,148 @@
+---
+title: Changelog
+description: Track updates and improvements to Netra Documentation over time.
+---
+
+## Overview
+
+Stay current with Netra Documentation's latest releases. You access new features, bug fixes, and improvements here. Review release notes to understand changes and upgrade your setup smoothly.
+
+<Callout kind="info">
+  Check the tags on each release: `feature` for new capabilities, `bugfix` for corrections, `breaking` for API changes, and `improvement` for enhancements.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added `<Tabs>` and `<CodeGroup>` components for multi-platform examples
+- Introduced `<Columns>` layout for feature grids and navigation cards
+- Enhanced MDX parsing with automatic special character escaping
+
+## Improvements
+
+- Faster rendering for large documentation sites
+- Better accessibility support with required `alt` and `title` attributes
+
+## Bug Fixes
+
+- Fixed nested code block rendering using 4 backticks
+- Resolved heading hierarchy issues preventing H1 usage
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Live preview for MDX components during editing
+- Integrated `<ParamField>` and `<ResponseField>` for API docs
+
+## Bug Fixes
+
+- Corrected JSX attribute parsing for double quotes only
+- Fixed `<Update>` component tag arrays with proper JSX syntax
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Removed support for single quotes in JSX attributes; use double quotes only
+- Deprecated H1 headings; rely on frontmatter titles
+
+## New Features
+
+- Core `<Callout>`, `<Card>`, and `<Steps>` components
+- Full MDX validation with parsing error prevention
+
+## Initial Setup
+
+- Basic documentation scaffolding
+- YAML frontmatter enforcement
+
+</Update>
+
+## Upgrading Netra Documentation
+
+Follow these steps to upgrade to the latest version. You run the commands in your project root.
+
+<Steps>
+  <Step title="Check Current Version" icon="package">
+    Verify your installed version:
+    
+````bash
+npm list netra-docs
+````
+  </Step>
+  
+  <Step title="Update Package" icon="download">
+    <Tabs>
+      <Tab title="npm" icon="npm">
+````bash
+npm install netra-docs@latest
+````
+      </Tab>
+      <Tab title="yarn" icon="yarn">
+````bash
+yarn add netra-docs@latest
+````
+      </Tab>
+      <Tab title="pnpm" icon="package">
+````bash
+pnpm add netra-docs@latest
+````
+      </Tab>
+    </Tabs>
+  </Step>
+  
+  <Step title="Rebuild Site" icon="rocket">
+    Rebuild and restart your development server:
+    
+    <CodeGroup tabs="npm,yarn">
+````bash
+npm run build
+npm run dev
+````
+````bash
+yarn build
+yarn dev
+````
+    </CodeGroup>
+  </Step>
+</Steps>
+
+<Callout kind="danger">
+  Backup your `docs/` folder before upgrading, especially with `breaking` releases.
+</Callout>
+
+## Upcoming Roadmap
+
+Explore planned enhancements. You provide feedback via GitHub issues.
+
+<Columns cols={3}>
+  <Card title="AI Assistance" icon="bot" href="https://github.com/netra/docs/issues">
+    Auto-generate MDX from prompts.
+  </Card>
+  <Card title="Versioned Docs" icon="git-branch" href="https://github.com/netra/docs/issues">
+    Support multiple documentation versions.
+  </Card>
+  <Card title="Advanced Search" icon="search" href="https://github.com/netra/docs/issues">
+    Full-text search across your docs.
+  </Card>
+</Columns>
+
+## Contribution Guidelines
+
+You contribute by following these patterns:
+
+| Area          | Guideline                          | Example Component     |
+|---------------|------------------------------------|-----------------------|
+| New Features  | Add 5-8 diverse components per page | `<Steps>`, `<Tabs>`  |
+| Bug Reports   | Include parsing error reproduction | `<Update>` tags       |
+| Documentation | Escape `{ } < >` in prose          | `{API_KEY}`           |
+
+This changelog evolves with Netra Documentation. Check back regularly for updates.

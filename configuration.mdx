@@ -1,0 +1,137 @@
+---
+title: Configuration Options
+description: Customize your documentation space with advanced settings and integrations.
+---
+
+## Overview
+
+Configure Netra Documentation to match your project's needs. Adjust space settings, apply custom branding, manage exports and imports, and connect external tools. These options help you tailor the documentation experience for your team.
+
+<Columns cols={3}>
+  <Card title="Space Settings" icon="settings" href="#space-settings">
+    Manage permissions and access controls.
+  </Card>
+  <Card title="Themes & Branding" icon="palette" href="#themes">
+    Customize colors and styles.
+  </Card>
+  <Card title="Exports & Imports" icon="upload" href="#export-import">
+    Backup and restore your content.
+  </Card>
+  <Card title="Integrations" icon="plug" href="#integrations">
+    Connect with GitHub, Slack, and more.
+  </Card>
+</Columns>
+
+## Space Settings and Permissions
+
+Control who accesses your documentation space. Set roles like admin, editor, and viewer to manage contributions securely.
+
+| Role     | Permissions                          | Use Case                  |
+|----------|--------------------------------------|---------------------------|
+| Admin    | Full access, settings, users         | Project owners            |
+| Editor   | Edit pages, add content              | Content writers           |
+| Viewer   | Read-only access                     | Team members, clients     |
+
+<Callout kind="tip">
+  Assign roles at the space level to apply permissions across all pages.
+</Callout>
+
+<Steps>
+  <Step title="Create a New Role" icon="user-plus">
+    Navigate to Space Settings > Permissions.
+    
+    Select "Add Role" and define custom permissions.
+  </Step>
+  <Step title="Assign Users" icon="users">
+    Search for users by email.
+    
+    Drag users into role groups.
+  </Step>
+  <Step title="Test Permissions" icon="check-circle">
+    Log in as a test user to verify access.
+  </Step>
+</Steps>
+
+## Custom Themes and Branding
+
+Apply your brand color (`#3B82F6`) and custom styles. Override defaults with a theme configuration file.
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+  {
+    "primaryColor": "#3B82F6",
+    "fontFamily": "Inter, sans-serif",
+    "logoUrl": "https://your-domain.com/logo.svg"
+  }
+  ```
+  ```yaml
+  primaryColor: "#3B82F6"
+  fontFamily: Inter, sans-serif
+  logoUrl: https://your-domain.com/logo.svg
+  ```
+</CodeGroup>
+
+<Expandable title="Advanced CSS Overrides" default-open="false">
+  Add custom CSS in the theme editor:
+  
+  ```css
+  .header {
+    background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+  }
+  
+  .sidebar a:hover {
+    color: #3B82F6;
+  }
+  ```
+</Expandable>
+
+## Export and Import Options
+
+Export your space as Markdown, PDF, or HTML. Import from GitHub repos or ZIP archives to migrate content quickly.
+
+<Tabs>
+  <Tab title="Export" icon="download">
+    Choose format and include attachments.
+    
+    <CodeGroup tabs="CLI,UI">
+      ```bash
+      netra export --space=my-space --format=md --output=./docs
+      ```
+      ```bash
+      # Use the web UI: Space Settings > Export > Select All Pages
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="Import" icon="upload">
+    Upload ZIP or connect GitHub.
+    
+    Review changes before applying.
+    
+    ```bash
+    netra import --space=my-space --source=./imported-docs
+    ```
+  </Tab>
+</Tabs>
+
+## Integrations with External Tools
+
+Connect Netra to tools like GitHub for sync, Slack for notifications, and Zapier for automations.
+
+<ExpandableGroup>
+  <Expandable title="GitHub Sync" default-open="true">
+    Link your repo to auto-publish changes.
+    
+    Set webhook URL: `https://api.netra-docs.com/webhooks/github/YOUR_WEBHOOK_ID`
+    
+    <Callout kind="info">
+      Ensure your repo is public or provide a deploy key.
+    </Callout>
+  </Expandable>
+  <Expandable title="Slack Notifications">
+    Receive alerts for new pages or edits.
+    
+    Use incoming webhook: `https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK`
+  </Expandable>
+</ExpandableGroup>
+
+These configurations ensure your documentation scales with your project. Review changes in preview mode before saving.

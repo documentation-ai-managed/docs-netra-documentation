@@ -1,0 +1,114 @@
+---
+title: Frequently Asked Questions
+description: Common questions and answers about using Netra Documentation effectively.
+---
+
+## Troubleshooting Access Issues
+
+You might encounter access problems when inviting team members or switching projects. Follow these steps to resolve common issues.
+
+<Steps>
+  <Step title="Verify Your Role" icon="users">
+    Check your permissions in the project settings. You need `admin` or `editor` role to manage access.
+  </Step>
+  <Step title="Reset Invitation Link" icon="refresh-cw">
+    Generate a new invite link from the members page. Old links expire after 7 days.
+  </Step>
+  <Step title="Clear Browser Cache" icon="browser">
+    Clear your cache and cookies, then log in again. Use incognito mode to test.
+  </Step>
+  <Step title="Contact Support" icon="mail">
+    If issues persist, email `support@netra.com` with your project ID.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable two-factor authentication (2FA) to prevent unauthorized access attempts.
+</Callout>
+
+## Best Practices for Large Projects
+
+Organize content efficiently to maintain performance in projects with 100+ pages.
+
+<Tabs>
+  <Tab title="Folder Structure" icon="folder">
+    Use nested folders for categories like `guides/`, `api/`, and `changelog/`.
+
+    ```mermaid
+    graph TD
+        A[Root] --> B[guides]
+        A --> C[api]
+        A --> D[changelog]
+        B --> E[quickstart]
+        B --> F[advanced]
+    ```
+  </Tab>
+  <Tab title="Performance Tips" icon="zap">
+    Limit images to `<1MB` each and use WebP format. Compress with tools like ImageOptim.
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="MDX,JSON">
+```mdx
+// pages/api.mdx
+<ParamField path="userId" param-type="string" required="true">
+  User identifier.
+</ParamField>
+```
+```json
+{
+  "nav": [
+    { "title": "API", "href": "/api" },
+    { "title": "Guides", "href": "/guides" }
+  ]
+}
+```
+</CodeGroup>
+
+<Callout kind="info">
+  Run `netra build --watch` during development to catch performance issues early.
+</Callout>
+
+## Netra vs Other Documentation Tools
+
+Understand key differences to migrate smoothly.
+
+<Tabs>
+  <Tab title="Netra" icon="star">
+    Native MDX support with zero-config JSX components. Brand color: `#3B82F6`.
+  </Tab>
+  <Tab title="Docusaurus" icon="book-open">
+    React-based, requires plugins for advanced MDX. Heavier bundle size.
+  </Tab>
+  <Tab title="Nextra" icon="code">
+    Next.js focused, less flexible for custom themes.
+  </Tab>
+</Tabs>
+
+| Feature | Netra | Docusaurus | Nextra |
+|---------|-------|------------|--------|
+| MDX Components | Built-in (5-8 types) | Plugins needed | Basic only |
+| Deployment | Static/Vercel | Static only | Next.js required |
+| Customization | Full theme control | Limited | Theme blocks |
+
+## Support and Community Resources
+
+Access help quickly through these channels.
+
+<Columns cols={3}>
+  <Card title="Discord" icon="message-circle" href="https://discord.gg/netra" target="_blank">
+    Join 5K+ developers for real-time help.
+  </Card>
+  <Card title="GitHub Discussions" icon="github" href="https://github.com/netra/docs/discussions" target="_blank">
+    Ask questions and share templates.
+  </Card>
+  <Card title="Documentation Forum" icon="help-circle" href="/forum">
+    Searchable Q&A for common issues.
+  </Card>
+</Columns>
+
+<ExpandableGroup>
+  <Expandable title="Advanced Troubleshooting" default-open="false">
+    For persistent errors, check logs with `netra logs --project=your-project-id`. Share output with support.
+  </Expandable>
+</ExpandableGroup>
